@@ -1,36 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <!-- 設定 viewport,使 css可以對應設備的螢幕像素 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome to Henry's Site!!!</title>
-</head>
+
+  <!-- 引入 Bootstrap 樣式 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- 以下 4 行是為了解決 html 5 在舊瀏覽器上的問題 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+  </head>
   <body>
-    <div id="nav">
+    <!-- 導覽列 // navbar-fixed-top navar 固定在上面 -->
+    <nav class="my-nav navbar-fixed-top navbar-default">
       <div class="container">
-      <button type="button" class="menu-button">
-        三
-      </button>
-      <input type="checkbox" class="menu-button-checkbox">
-        <ul class="menu">
-          <li><a href="#about">Who am I</a></li>
-          <li><a href="#my-work">My work</a></li>
-          <li><a href="#contact">Contact me</a></li>
-        </ul>
-      </div>
-    </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">我的作品集</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="pull-right nav navbar-nav">
+            <li><a class="btn btn-default" href="#about" role="button">Who am I</a></li>
+            <li><a class="btn btn-default" href="#my-work" role="button">My work</a></li>
+            <li><a class="btn btn-default" href="#contact-me" role="button">Contact me</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
     <div id="content">
-      <div class="container">
-        <div id="about">
-          <div id="my-avatar"><img src="img/my-avatar.png" alt="my avatar"></div>
-          <div id="my-info">
-            <h1>I am hu.Henry</h1>
-            <h3>Developer and startup entrepreneur</h3>
-            <hr>
-            <table>
+      <div id="about" class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+          <img src="img/my-avatar.png" class="img-responsive center-block" alt="">
+        </div>
+      <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+        <h1>I am Ch.Myra</h1>
+        <h3>Developer and startup entrepreneur</h3>
+          <table class="table table-striped table-hover"> 
               <tr>
                 <th>Birth</th>
                 <td>1992</td>
@@ -53,77 +76,61 @@
             </table>
           </div>
         </div>
-        <hr class="bar">
+      </div>
+    </div>
 
-        <div id="my-work">
-          <h1>This is My Work</h1>
-          <div id="my-work-gallery">
-            <div class="item">
-                <img src="http://lorempixel.com/300/300/" alt="My Personal Site">
-              <div class="item-info">
-                <h3>Lorem ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nostrum dolores facere.</p>
-              </div>
-            </div>
-            <div class="item">
-                <img src="http://lorempixel.com/300/300/" alt="My Personal Site">
-              <div class="item-info">
-                <h3>Lorem ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt.</p>
-              </div>
-            </div>
-            <div class="item">
-                <img src="http://lorempixel.com/300/300/" alt="My Personal Site">
-              <div class="item-info">
-                <h3>Lorem ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt.</p>
-              </div>
-            </div>
-            <div class="item">
-                <img src="http://lorempixel.com/300/300/" alt="My Personal Site">
-              <div class="item-info">
-                <h3>Lorem ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt.</p>
-              </div>
-            </div>
-            <div class="item">
-                <img src="http://lorempixel.com/300/300/" alt="My Personal Site">
-              <div class="item-info">
-                <h3>Lorem ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt.</p>
-              </div>
-            </div>                        
-          </div>
+    <hr class="bar">
+
+    <!-- My Work -->
+    <h1 class="text-center" id="work">This is my work</h1>
+    <div class="container">
+      <div class="row">
+        <div class="my-project col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <img src="img/lorem.jpg" class="img-responsive center-block" alt="">
         </div>
-        <hr class="bar">
-
-        <div id="contact">
-          <h1>Contact me</h1>
-          <form action="" class="contact-form">
-            <div class="form-row">
-              <label for="name">姓名</label>
-              <input type="text" name="name" placeholder="input your name" required>
-            </div>
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input type="email" name="email" placeholder="enter your email" required>
-            </div>
-            <div class="form-row">
-              <label for="message">訊息</label>
-              <textarea type="message" name="message" placeholder="write mwssage" required></textarea>
-            </div>
-            <div class="form-row">
-              <button type="reset">重設</button>
-              <button type="sumbit">提交</button>
-            </div>
-          </form>
+        <div class="my-project col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <img src="img/lorem.jpg" class="img-responsive center-block" alt="">
+        </div>
+        <div class="my-project col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <img src="img/lorem.jpg" class="img-responsive center-block" alt="">
+        </div>
+        <div class="my-project col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <img src="img/lorem.jpg" class="img-responsive center-block" alt="">
+        </div>
+        <div class="my-project col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <img src="img/lorem.jpg" class="img-responsive center-block" alt="">
         </div>
       </div>
     </div>
-  </body>
-</html>
+    <hr class="bar">
 
+    <div id="contact-me">
+      <h1>Contact me</h1>
+      <form action="" class="contact-form">
+        <div class="form-row">
+          <label for="name">姓名</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="message">訊息</label>
+          <textarea type="message" name="message" placeholder="write message" required></textarea>
+        </div>
+        <div class="form-row">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- 引入 Bootstrap 插件 -->
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
